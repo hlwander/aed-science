@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Dissolved Oxygen | The AED Manual</title>
   <meta name="description" content="Work in progress." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Dissolved Oxygen | The AED Manual" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2024-08-28" />
+<meta name="date" content="2025-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,7 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -65,11 +65,10 @@
 <script src="libs/panelset-0.3.0/panelset.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
@@ -78,7 +77,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -88,7 +87,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -149,6 +148,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -329,171 +329,7 @@ div.csl-indent {
 <li class="chapter" data-level="9.3.4" data-path="organic-matter.html"><a href="organic-matter.html#variable-summary-6"><i class="fa fa-check"></i><b>9.3.4</b> Variable Summary</a></li>
 <li class="chapter" data-level="9.3.5" data-path="organic-matter.html"><a href="organic-matter.html#parameter-summary-6"><i class="fa fa-check"></i><b>9.3.5</b> Parameter Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="organic-matter.html"><a href="organic-matter.html#setup-configuration-5"><i class="fa fa-check"></i><b>9.4</b> Setup &amp; Configuration</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="phytoplankton.html"><a href="phytoplankton.html"><i class="fa fa-check"></i><b>10</b> Phytoplankton</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="phytoplankton.html"><a href="phytoplankton.html#contributors-6"><i class="fa fa-check"></i><b>10.1</b> Contributors</a></li>
-<li class="chapter" data-level="10.2" data-path="phytoplankton.html"><a href="phytoplankton.html#overview-5"><i class="fa fa-check"></i><b>10.2</b> Overview</a></li>
-<li class="chapter" data-level="10.3" data-path="phytoplankton.html"><a href="phytoplankton.html#model-description-4"><i class="fa fa-check"></i><b>10.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="phytoplankton.html"><a href="phytoplankton.html#process-descriptions-5"><i class="fa fa-check"></i><b>10.3.1</b> Process Descriptions</a></li>
-<li class="chapter" data-level="10.3.2" data-path="phytoplankton.html"><a href="phytoplankton.html#optional-module-links-6"><i class="fa fa-check"></i><b>10.3.2</b> Optional Module Links</a></li>
-<li class="chapter" data-level="10.3.3" data-path="phytoplankton.html"><a href="phytoplankton.html#feedbacks-to-the-host-model-6"><i class="fa fa-check"></i><b>10.3.3</b> Feedbacks to the Host Model</a></li>
-<li class="chapter" data-level="10.3.4" data-path="phytoplankton.html"><a href="phytoplankton.html#variable-summary-7"><i class="fa fa-check"></i><b>10.3.4</b> Variable Summary</a></li>
-<li class="chapter" data-level="10.3.5" data-path="phytoplankton.html"><a href="phytoplankton.html#parameter-and-option-summary"><i class="fa fa-check"></i><b>10.3.5</b> Parameter and Option Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="10.4" data-path="phytoplankton.html"><a href="phytoplankton.html#setup-configuration-6"><i class="fa fa-check"></i><b>10.4</b> Setup &amp; Configuration</a>
-<ul>
-<li class="chapter" data-level="10.4.1" data-path="phytoplankton.html"><a href="phytoplankton.html#setup-example"><i class="fa fa-check"></i><b>10.4.1</b> Setup Example</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="phytoplankton.html"><a href="phytoplankton.html#case-studies-examples-4"><i class="fa fa-check"></i><b>10.5</b> Case Studies &amp; Examples</a>
-<ul>
-<li class="chapter" data-level="10.5.1" data-path="phytoplankton.html"><a href="phytoplankton.html#case-study-falling-creek-reservoir-1"><i class="fa fa-check"></i><b>10.5.1</b> Case Study : Falling Creek Reservoir</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html"><i class="fa fa-check"></i><b>11</b> Aqueous Geochemistry</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#contributors-7"><i class="fa fa-check"></i><b>11.1</b> Contributors</a></li>
-<li class="chapter" data-level="11.2" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#overview-6"><i class="fa fa-check"></i><b>11.2</b> Overview</a></li>
-<li class="chapter" data-level="11.3" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#model-description-5"><i class="fa fa-check"></i><b>11.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="11.3.1" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#process-descriptions-6"><i class="fa fa-check"></i><b>11.3.1</b> Process Descriptions</a></li>
-<li class="chapter" data-level="11.3.2" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#variable-summary-8"><i class="fa fa-check"></i><b>11.3.2</b> Variable Summary</a></li>
-<li class="chapter" data-level="11.3.3" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#parameter-summary-7"><i class="fa fa-check"></i><b>11.3.3</b> Parameter Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="11.4" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#setup-configuration-7"><i class="fa fa-check"></i><b>11.4</b> Setup &amp; Configuration</a>
-<ul>
-<li class="chapter" data-level="11.4.1" data-path="aqueous-geochemistry.html"><a href="aqueous-geochemistry.html#setup-example-1"><i class="fa fa-check"></i><b>11.4.1</b> Setup Example</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html"><i class="fa fa-check"></i><b>12</b> Pathogens &amp; Microbial Indicator Organisms</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#contributors-8"><i class="fa fa-check"></i><b>12.1</b> Contributors</a></li>
-<li class="chapter" data-level="12.2" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#overview-7"><i class="fa fa-check"></i><b>12.2</b> Overview</a></li>
-<li class="chapter" data-level="12.3" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#model-description-6"><i class="fa fa-check"></i><b>12.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="12.3.1" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#process-descriptions-7"><i class="fa fa-check"></i><b>12.3.1</b> Process Descriptions</a></li>
-<li class="chapter" data-level="12.3.2" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#variable-summary-9"><i class="fa fa-check"></i><b>12.3.2</b> Variable Summary</a></li>
-<li class="chapter" data-level="12.3.3" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#parameter-summary-8"><i class="fa fa-check"></i><b>12.3.3</b> Parameter Summary</a></li>
-<li class="chapter" data-level="12.3.4" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#optional-module-links-7"><i class="fa fa-check"></i><b>12.3.4</b> Optional Module Links</a></li>
-<li class="chapter" data-level="12.3.5" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#feedbacks-to-the-host-model-7"><i class="fa fa-check"></i><b>12.3.5</b> Feedbacks to the Host Model</a></li>
-</ul></li>
-<li class="chapter" data-level="12.4" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#setup-configuration-8"><i class="fa fa-check"></i><b>12.4</b> Setup &amp; Configuration</a>
-<ul>
-<li class="chapter" data-level="12.4.1" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#setup-example-2"><i class="fa fa-check"></i><b>12.4.1</b> Setup Example</a></li>
-</ul></li>
-<li class="chapter" data-level="12.5" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#case-studies-examples-5"><i class="fa fa-check"></i><b>12.5</b> Case Studies &amp; Examples</a>
-<ul>
-<li class="chapter" data-level="12.5.1" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#case-study"><i class="fa fa-check"></i><b>12.5.1</b> Case Study</a></li>
-<li class="chapter" data-level="12.5.2" data-path="pathogens-microbial-indicator-organisms.html"><a href="pathogens-microbial-indicator-organisms.html#publications-4"><i class="fa fa-check"></i><b>12.5.2</b> Publications</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="Pesticide_1.html"><a href="Pesticide_1.html"><i class="fa fa-check"></i><b>13</b> Pesticides</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="Pesticide_1.html"><a href="Pesticide_1.html#contributors-9"><i class="fa fa-check"></i><b>13.1</b> Contributors</a></li>
-<li class="chapter" data-level="13.2" data-path="Pesticide_1.html"><a href="Pesticide_1.html#overview-8"><i class="fa fa-check"></i><b>13.2</b> Overview</a></li>
-<li class="chapter" data-level="13.3" data-path="Pesticide_1.html"><a href="Pesticide_1.html#model-description-7"><i class="fa fa-check"></i><b>13.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="13.3.1" data-path="Pesticide_1.html"><a href="Pesticide_1.html#process-descriptions-8"><i class="fa fa-check"></i><b>13.3.1</b> Process Descriptions</a></li>
-<li class="chapter" data-level="13.3.2" data-path="Pesticide_1.html"><a href="Pesticide_1.html#variable-summary-10"><i class="fa fa-check"></i><b>13.3.2</b> Variable Summary</a></li>
-<li class="chapter" data-level="13.3.3" data-path="Pesticide_1.html"><a href="Pesticide_1.html#parameter-summary-9"><i class="fa fa-check"></i><b>13.3.3</b> Parameter Summary</a></li>
-<li class="chapter" data-level="13.3.4" data-path="Pesticide_1.html"><a href="Pesticide_1.html#optional-module-links-8"><i class="fa fa-check"></i><b>13.3.4</b> Optional Module Links</a></li>
-<li class="chapter" data-level="13.3.5" data-path="Pesticide_1.html"><a href="Pesticide_1.html#feedbacks-to-the-host-model-8"><i class="fa fa-check"></i><b>13.3.5</b> Feedbacks to the Host Model</a></li>
-</ul></li>
-<li class="chapter" data-level="13.4" data-path="Pesticide_1.html"><a href="Pesticide_1.html#setup-and-configuration"><i class="fa fa-check"></i><b>13.4</b> Setup and Configuration</a></li>
-<li class="chapter" data-level="13.5" data-path="Pesticide_1.html"><a href="Pesticide_1.html#case-studies-and-examples"><i class="fa fa-check"></i><b>13.5</b> Case Studies and Examples</a></li>
-</ul></li>
-<li class="part"><span><b>II AED Benthic Modules</b></span></li>
-<li class="chapter" data-level="14" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html"><i class="fa fa-check"></i><b>14</b> Sediment Biogeochemistry</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#contributors-10"><i class="fa fa-check"></i><b>14.1</b> Contributors</a></li>
-<li class="chapter" data-level="14.2" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#overview-9"><i class="fa fa-check"></i><b>14.2</b> Overview</a></li>
-<li class="chapter" data-level="14.3" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#model-description-8"><i class="fa fa-check"></i><b>14.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="14.3.1" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#general-description"><i class="fa fa-check"></i><b>14.3.1</b> General description</a></li>
-<li class="chapter" data-level="14.3.2" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#process-descriptions-9"><i class="fa fa-check"></i><b>14.3.2</b> Process Descriptions</a></li>
-<li class="chapter" data-level="14.3.3" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#implementation-within-the-aed-framework"><i class="fa fa-check"></i><b>14.3.3</b> Implementation within the AED framework</a></li>
-<li class="chapter" data-level="14.3.4" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#optional-module-links-9"><i class="fa fa-check"></i><b>14.3.4</b> Optional module links</a></li>
-<li class="chapter" data-level="14.3.5" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#feedbacks-to-the-host-model-9"><i class="fa fa-check"></i><b>14.3.5</b> Feedbacks to the host model</a></li>
-<li class="chapter" data-level="14.3.6" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#VariableSummary"><i class="fa fa-check"></i><b>14.3.6</b> Variable summary</a></li>
-<li class="chapter" data-level="14.3.7" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#SedParameterAndOptionSummary"><i class="fa fa-check"></i><b>14.3.7</b> Parameter and option summary</a></li>
-</ul></li>
-<li class="chapter" data-level="14.4" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#setup-configuration-9"><i class="fa fa-check"></i><b>14.4</b> Setup &amp; Configuration</a>
-<ul>
-<li class="chapter" data-level="14.4.1" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#setup-details-and-examples"><i class="fa fa-check"></i><b>14.4.1</b> Setup details and examples</a></li>
-<li class="chapter" data-level="14.4.2" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#SedInitialisation"><i class="fa fa-check"></i><b>14.4.2</b> Sediment initialisation options</a></li>
-<li class="chapter" data-level="14.4.3" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#SedBoundarySettings"><i class="fa fa-check"></i><b>14.4.3</b> Boundary settings</a></li>
-</ul></li>
-<li class="chapter" data-level="14.5" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#output-post-processing"><i class="fa fa-check"></i><b>14.5</b> Output &amp; Post-processing</a>
-<ul>
-<li class="chapter" data-level="14.5.1" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#concentration-of-state-variables-.sed-files"><i class="fa fa-check"></i><b>14.5.1</b> Concentration of state variables: ‘.sed’ files</a></li>
-<li class="chapter" data-level="14.5.2" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#flux-of-state-variables-swi_fluxes.sed"><i class="fa fa-check"></i><b>14.5.2</b> Flux of state variables: ‘swi_fluxes.sed’</a></li>
-<li class="chapter" data-level="14.5.3" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#SedOtherVariablesExtrasSed"><i class="fa fa-check"></i><b>14.5.3</b> Other variables: ‘/Extras/ .sed’</a></li>
-<li class="chapter" data-level="14.5.4" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#depth-profile-settings-depths.sed"><i class="fa fa-check"></i><b>14.5.4</b> Depth profile settings: ‘Depths.sed’</a></li>
-<li class="chapter" data-level="14.5.5" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#mass-balance-calculation"><i class="fa fa-check"></i><b>14.5.5</b> Mass balance calculation</a></li>
-</ul></li>
-<li class="chapter" data-level="14.6" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#case-studies-examples-6"><i class="fa fa-check"></i><b>14.6</b> Case Studies &amp; Examples</a>
-<ul>
-<li class="chapter" data-level="" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#numerical-mass-balance-and-flux-confirmation"><i class="fa fa-check"></i>Numerical mass balance and flux confirmation</a></li>
-<li class="chapter" data-level="14.6.1" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#case-study-model-benchmark-example"><i class="fa fa-check"></i><b>14.6.1</b> Case study: Model benchmark example</a></li>
-<li class="chapter" data-level="14.6.2" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#case-study-aquaculture-and-sediment-recovery"><i class="fa fa-check"></i><b>14.6.2</b> Case study: Aquaculture and sediment recovery</a></li>
-<li class="chapter" data-level="14.6.3" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#case-study-the-coorong-dynamics-model"><i class="fa fa-check"></i><b>14.6.3</b> Case study: The Coorong Dynamics Model</a></li>
-</ul></li>
-<li class="chapter" data-level="14.7" data-path="sediment-biogeochemistry.html"><a href="sediment-biogeochemistry.html#references"><i class="fa fa-check"></i><b>14.7</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="bivalves.html"><a href="bivalves.html"><i class="fa fa-check"></i><b>15</b> Bivalves</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="bivalves.html"><a href="bivalves.html#contributors-11"><i class="fa fa-check"></i><b>15.1</b> Contributors</a></li>
-<li class="chapter" data-level="15.2" data-path="bivalves.html"><a href="bivalves.html#overview-10"><i class="fa fa-check"></i><b>15.2</b> Overview</a></li>
-<li class="chapter" data-level="15.3" data-path="bivalves.html"><a href="bivalves.html#model-description-9"><i class="fa fa-check"></i><b>15.3</b> Model Description</a>
-<ul>
-<li class="chapter" data-level="15.3.1" data-path="bivalves.html"><a href="bivalves.html#process-descriptions-10"><i class="fa fa-check"></i><b>15.3.1</b> Process Descriptions</a></li>
-<li class="chapter" data-level="15.3.2" data-path="bivalves.html"><a href="bivalves.html#variable-summary-11"><i class="fa fa-check"></i><b>15.3.2</b> Variable Summary</a></li>
-<li class="chapter" data-level="15.3.3" data-path="bivalves.html"><a href="bivalves.html#parameter-summary-10"><i class="fa fa-check"></i><b>15.3.3</b> Parameter Summary</a></li>
-<li class="chapter" data-level="15.3.4" data-path="bivalves.html"><a href="bivalves.html#optional-module-links-10"><i class="fa fa-check"></i><b>15.3.4</b> Optional Module Links</a></li>
-<li class="chapter" data-level="15.3.5" data-path="bivalves.html"><a href="bivalves.html#feedbacks-to-the-host-model-10"><i class="fa fa-check"></i><b>15.3.5</b> Feedbacks to the Host Model</a></li>
-</ul></li>
-<li class="chapter" data-level="15.4" data-path="bivalves.html"><a href="bivalves.html#setup-configuration-10"><i class="fa fa-check"></i><b>15.4</b> Setup &amp; Configuration</a>
-<ul>
-<li class="chapter" data-level="15.4.1" data-path="bivalves.html"><a href="bivalves.html#setup-example-3"><i class="fa fa-check"></i><b>15.4.1</b> Setup Example</a></li>
-</ul></li>
-<li class="chapter" data-level="15.5" data-path="bivalves.html"><a href="bivalves.html#case-studies-examples-7"><i class="fa fa-check"></i><b>15.5</b> Case Studies &amp; Examples</a>
-<ul>
-<li class="chapter" data-level="15.5.1" data-path="bivalves.html"><a href="bivalves.html#case-study-1"><i class="fa fa-check"></i><b>15.5.1</b> Case Study</a></li>
-<li class="chapter" data-level="15.5.2" data-path="bivalves.html"><a href="bivalves.html#publications-5"><i class="fa fa-check"></i><b>15.5.2</b> Publications</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html"><i class="fa fa-check"></i><b>16</b> Benthic Habitat Quality</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#contributors-12"><i class="fa fa-check"></i><b>16.1</b> Contributors</a></li>
-<li class="chapter" data-level="16.2" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#overview-11"><i class="fa fa-check"></i><b>16.2</b> Overview</a></li>
-<li class="chapter" data-level="16.3" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#model-description---ruppia-habitat"><i class="fa fa-check"></i><b>16.3</b> Model Description - Ruppia Habitat</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#feedbacks-to-the-host-model-11"><i class="fa fa-check"></i><b>16.3.1</b> Feedbacks to the Host Model</a></li>
-<li class="chapter" data-level="16.3.2" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#variable-summary-12"><i class="fa fa-check"></i><b>16.3.2</b> Variable Summary</a></li>
-<li class="chapter" data-level="16.3.3" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#parameter-summary-11"><i class="fa fa-check"></i><b>16.3.3</b> Parameter Summary</a></li>
-<li class="chapter" data-level="16.3.4" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#post-processing"><i class="fa fa-check"></i><b>16.3.4</b> Post-processing</a></li>
-</ul></li>
-<li class="chapter" data-level="16.4" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#setup-configuration-11"><i class="fa fa-check"></i><b>16.4</b> Setup &amp; Configuration</a></li>
-<li class="chapter" data-level="16.5" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#case-studies-examples-8"><i class="fa fa-check"></i><b>16.5</b> Case Studies &amp; Examples</a>
-<ul>
-<li class="chapter" data-level="16.5.1" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#case-study-2"><i class="fa fa-check"></i><b>16.5.1</b> Case Study</a></li>
-<li class="chapter" data-level="16.5.2" data-path="benthic-habitat-quality.html"><a href="benthic-habitat-quality.html#publications-6"><i class="fa fa-check"></i><b>16.5.2</b> Publications</a></li>
-</ul></li>
-</ul></li>
-<li class="part"><span><b>III Supporting Material</b></span></li>
-<li class="chapter" data-level="17" data-path="genericUtilitiesFunctions.html"><a href="genericUtilitiesFunctions.html"><i class="fa fa-check"></i><b>17</b> Generic Utilities &amp; Functions</a>
-<ul>
-<li class="chapter" data-level="17.0.1" data-path="genericUtilitiesFunctions.html"><a href="genericUtilitiesFunctions.html#GAS"><i class="fa fa-check"></i><b>17.0.1</b> Gas Transfer</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="publications-7.html"><a href="publications-7.html"><i class="fa fa-check"></i><b>18</b> Publications</a></li>
-<li class="chapter" data-level="" data-path="forthcoming-chapters.html"><a href="forthcoming-chapters.html"><i class="fa fa-check"></i>Forthcoming chapters</a>
-<ul>
-<li class="chapter" data-level="" data-path="forthcoming-chapters.html"><a href="forthcoming-chapters.html#we-invite-you-to-contribute-to-these-chapters"><i class="fa fa-check"></i>We invite you to contribute to these chapters!</a></li>
-<li class="chapter" data-level="" data-path="forthcoming-chapters.html"><a href="forthcoming-chapters.html#editing-the-book-1"><i class="fa fa-check"></i>Editing the book</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -598,7 +434,7 @@ where <span class="math inline">\(\Delta z_{bot}\)</span> is the bottom layer th
 <li>Oxygen consumption during bacterial mineralisation of DOC is done in the organic matter module - <a href="organic-matter.html#organic-matter">aed_organic_matter</a>;</li>
 <li>Oxygen consumption during nitrification is done in the nitrogen module - <a href="inorganic-nitrogen.html#inorganic-nitrogen">aed_inorganic_nitrogen</a>;</li>
 <li>Oxygen production/consumption by phytoplankton phtosynthesis/respiration is done in the phytoplankton module - <a href="phytoplankton.html#phytoplankton">aed_phytoplankton</a>;</li>
-<li>Oxygen consumption due to zooplankton respiration is done in the zooplankton module - [aed_zooplankton][Zooplankton];</li>
+<li>Oxygen consumption due to zooplankton respiration is done in the zooplankton module - <a href="zooplankton.html#zooplankton">aed_zooplankton</a>;</li>
 <li>Oxygen production/consumption by seagrass phtosynthesis/respiration is done in the macrophyte module - aed_macrophyte;</li>
 <li>Oxygen consumption due to bivalve respiration is done in the benthic module - <a href="bivalves.html#bivalves">aed_bivalve</a>.</li>
 </ul>
@@ -1133,8 +969,8 @@ defaults to 0; Eq <a href="DO_1.html#eq:oxy4">(4.4)</a> used for <span class="ma
 <p><br></p>
 <center>
 <div class="figure"><span style="display:block;" id="fig:swan-map"></span>
-<div id="htmlwidget-69f90a819392d9fb1727" style="width:500px;height:385px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-69f90a819392d9fb1727">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-31.991618,115.835235],11,[]],"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addProviderTiles","args":[null,null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[-31.991618,115.835235,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Swan River",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-31.991618,-31.991618],"lng":[115.835235,115.835235]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3bf4ceaa89bf3082496a" style="width:500px;height:385px;" class="leaflet html-widget "></div>
+<script type="application/json" data-for="htmlwidget-3bf4ceaa89bf3082496a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-31.991618,115.835235],11,[]],"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addProviderTiles","args":[null,null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[-31.991618,115.835235,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Swan River",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-31.991618,-31.991618],"lng":[115.835235,115.835235]}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 4.1: Map of the Swan-Canning Estuary in Western Australia.
 </p>
@@ -1163,23 +999,23 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
 </div>
 <div id="publications" class="section level3 hasAnchor" number="4.5.2">
 <h3><span class="header-section-number">4.5.2</span> Publications<a href="DO_1.html#publications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="tlacblndjz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:100%;height:500px;">
-<style>#tlacblndjz table {
+<div id="qcjkwmsowb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:100%;height:500px;">
+<style>#qcjkwmsowb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tlacblndjz thead, #tlacblndjz tbody, #tlacblndjz tfoot, #tlacblndjz tr, #tlacblndjz td, #tlacblndjz th {
+#qcjkwmsowb thead, #qcjkwmsowb tbody, #qcjkwmsowb tfoot, #qcjkwmsowb tr, #qcjkwmsowb td, #qcjkwmsowb th {
   border-style: none;
 }
 
-#tlacblndjz p {
+#qcjkwmsowb p {
   margin: 0;
   padding: 0;
 }
 
-#tlacblndjz .gt_table {
+#qcjkwmsowb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1205,12 +1041,12 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-left-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_caption {
+#qcjkwmsowb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tlacblndjz .gt_title {
+#qcjkwmsowb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1222,7 +1058,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-bottom-width: 0;
 }
 
-#tlacblndjz .gt_subtitle {
+#qcjkwmsowb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1234,7 +1070,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-top-width: 0;
 }
 
-#tlacblndjz .gt_heading {
+#qcjkwmsowb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1246,13 +1082,13 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-right-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_bottom_border {
+#qcjkwmsowb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_col_headings {
+#qcjkwmsowb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1267,7 +1103,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-right-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_col_heading {
+#qcjkwmsowb .gt_col_heading {
   color: #FFFFFF;
   background-color: #14759E;
   font-size: 14px;
@@ -1287,7 +1123,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   overflow-x: hidden;
 }
 
-#tlacblndjz .gt_column_spanner_outer {
+#qcjkwmsowb .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #14759E;
   font-size: 14px;
@@ -1299,15 +1135,15 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 4px;
 }
 
-#tlacblndjz .gt_column_spanner_outer:first-child {
+#qcjkwmsowb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tlacblndjz .gt_column_spanner_outer:last-child {
+#qcjkwmsowb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tlacblndjz .gt_column_spanner {
+#qcjkwmsowb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1319,11 +1155,11 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   width: 100%;
 }
 
-#tlacblndjz .gt_spanner_row {
+#qcjkwmsowb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tlacblndjz .gt_group_heading {
+#qcjkwmsowb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1349,7 +1185,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   text-align: left;
 }
 
-#tlacblndjz .gt_empty_group_heading {
+#qcjkwmsowb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #D3D3D3;
@@ -1364,15 +1200,15 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   vertical-align: middle;
 }
 
-#tlacblndjz .gt_from_md > :first-child {
+#qcjkwmsowb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tlacblndjz .gt_from_md > :last-child {
+#qcjkwmsowb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tlacblndjz .gt_row {
+#qcjkwmsowb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1391,7 +1227,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   overflow-x: hidden;
 }
 
-#tlacblndjz .gt_stub {
+#qcjkwmsowb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1404,7 +1240,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 5px;
 }
 
-#tlacblndjz .gt_stub_row_group {
+#qcjkwmsowb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1418,15 +1254,15 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   vertical-align: top;
 }
 
-#tlacblndjz .gt_row_group_first td {
+#qcjkwmsowb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tlacblndjz .gt_row_group_first th {
+#qcjkwmsowb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tlacblndjz .gt_summary_row {
+#qcjkwmsowb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1436,16 +1272,16 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 5px;
 }
 
-#tlacblndjz .gt_first_summary_row {
+#qcjkwmsowb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_first_summary_row.thick {
+#qcjkwmsowb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tlacblndjz .gt_last_summary_row {
+#qcjkwmsowb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1455,7 +1291,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-bottom-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_grand_summary_row {
+#qcjkwmsowb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1465,7 +1301,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 5px;
 }
 
-#tlacblndjz .gt_first_grand_summary_row {
+#qcjkwmsowb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1475,7 +1311,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-top-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_last_grand_summary_row_top {
+#qcjkwmsowb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1485,11 +1321,11 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-bottom-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_striped {
+#qcjkwmsowb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tlacblndjz .gt_table_body {
+#qcjkwmsowb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1498,7 +1334,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-bottom-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_footnotes {
+#qcjkwmsowb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1512,7 +1348,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-right-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_footnote {
+#qcjkwmsowb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1521,7 +1357,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 5px;
 }
 
-#tlacblndjz .gt_sourcenotes {
+#qcjkwmsowb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1535,7 +1371,7 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   border-right-color: #D3D3D3;
 }
 
-#tlacblndjz .gt_sourcenote {
+#qcjkwmsowb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1543,64 +1379,73 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
   padding-right: 5px;
 }
 
-#tlacblndjz .gt_left {
+#qcjkwmsowb .gt_left {
   text-align: left;
 }
 
-#tlacblndjz .gt_center {
+#qcjkwmsowb .gt_center {
   text-align: center;
 }
 
-#tlacblndjz .gt_right {
+#qcjkwmsowb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tlacblndjz .gt_font_normal {
+#qcjkwmsowb .gt_font_normal {
   font-weight: normal;
 }
 
-#tlacblndjz .gt_font_bold {
+#qcjkwmsowb .gt_font_bold {
   font-weight: bold;
 }
 
-#tlacblndjz .gt_font_italic {
+#qcjkwmsowb .gt_font_italic {
   font-style: italic;
 }
 
-#tlacblndjz .gt_super {
+#qcjkwmsowb .gt_super {
   font-size: 65%;
 }
 
-#tlacblndjz .gt_footnote_marks {
+#qcjkwmsowb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tlacblndjz .gt_asterisk {
+#qcjkwmsowb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tlacblndjz .gt_indent_1 {
+#qcjkwmsowb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tlacblndjz .gt_indent_2 {
+#qcjkwmsowb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tlacblndjz .gt_indent_3 {
+#qcjkwmsowb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tlacblndjz .gt_indent_4 {
+#qcjkwmsowb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tlacblndjz .gt_indent_5 {
+#qcjkwmsowb .gt_indent_5 {
   text-indent: 25px;
+}
+
+#qcjkwmsowb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qcjkwmsowb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
@@ -1612,50 +1457,32 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Bruce et al. <a href="#ref-bruce2014" role="doc-biblioref">(2014)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Hydrodynamic controls on oxygen dynamics in a riverine salt wedge estuary, the Yarra River estuary, Australia.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Bruce et al. <a href="#ref-bruce2014" role="doc-biblioref">(2014)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Hydrodynamic controls on oxygen dynamics in a riverine salt wedge estuary, the Yarra River estuary, Australia.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Bruce et al. <a href="#ref-bruce2015model" role="doc-biblioref">(2015)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>A model of oxygen and nitrogen biogeochemical response to hydrodynamic regimes in the Yarra River estuary.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Bruce et al. <a href="#ref-bruce2015model" role="doc-biblioref">(2015)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>A model of oxygen and nitrogen biogeochemical response to hydrodynamic regimes in the Yarra River estuary.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Snortheim et al. <a href="#ref-snortheim2017" role="doc-biblioref">(2017)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Meteorological drivers of hypolimnetic anoxia in a eutrophic, north temperate lake.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Snortheim et al. <a href="#ref-snortheim2017" role="doc-biblioref">(2017)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Meteorological drivers of hypolimnetic anoxia in a eutrophic, north temperate lake.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Huang et al. <a href="#ref-huang2019" role="doc-biblioref">(2018)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Assessing artificial oxygenation in a riverine salt-wedge estuary with a three-dimensional finite-volume model.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Huang et al. <a href="#ref-huang2019" role="doc-biblioref">(2018)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Assessing artificial oxygenation in a riverine salt-wedge estuary with a three-dimensional finite-volume model.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Huang et al. <a href="#ref-huang2019" role="doc-biblioref">(2019)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>An integrated modelling system for water quality forecasting in an urban eutrophic estuary: The Swan-Canning Estuary Virtual Observatory.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Huang et al. <a href="#ref-huang2019" role="doc-biblioref">(2019)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>An integrated modelling system for water quality forecasting in an urban eutrophic estuary: The Swan-Canning Estuary Virtual Observatory.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Ladwig et al. <a href="#ref-ladwig2021" role="doc-biblioref">(2021)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Lake thermal structure drives interannual variability in summer anoxia dynamics in a eutrophic lake over 37 years.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Ladwig et al. <a href="#ref-ladwig2021" role="doc-biblioref">(2021)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Lake thermal structure drives interannual variability in summer anoxia dynamics in a eutrophic lake over 37 years.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Carey et al. <a href="#ref-carey2022" role="doc-biblioref">(2022)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Anoxia decreases the magnitude of the carbon, nitrogen, and phosphorus sink in freshwaters.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Carey et al. <a href="#ref-carey2022" role="doc-biblioref">(2022)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Anoxia decreases the magnitude of the carbon, nitrogen, and phosphorus sink in freshwaters.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Farrell et al. <a href="#ref-farrell2020" role="doc-biblioref">(2020)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Ecosystem-scale nutrient cycling responses to increasing air temperatures vary with lake trophic state.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Farrell et al. <a href="#ref-farrell2020" role="doc-biblioref">(2020)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Ecosystem-scale nutrient cycling responses to increasing air temperatures vary with lake trophic state.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
-    <tr><td headers="Author/Year" class="gt_row gt_left"><div class='gt_from_md'><p>Ward et al. <a href="#ref-ward2020" role="doc-biblioref">(2022)</a></p>
-</div></td>
-<td headers="Paper Title" class="gt_row gt_left"><div class='gt_from_md'><p>Differential responses of maximum and median chlorophyll-a to air temperature and nutrient load in a 31-year oligotrophic lake simulation.</p>
-</div></td>
+    <tr><td headers="Author/Year" class="gt_row gt_left"><span class='gt_from_md'>Ward et al. <a href="#ref-ward2020" role="doc-biblioref">(2022)</a></span></td>
+<td headers="Paper Title" class="gt_row gt_left"><span class='gt_from_md'>Differential responses of maximum and median chlorophyll-a to air temperature and nutrient load in a 31-year oligotrophic lake simulation.</span></td>
 <td headers="Description" class="gt_row gt_center">NA</td></tr>
   </tbody>
   
@@ -1676,8 +1503,8 @@ Figure 4.3: The total area of anoxia (&lt;2 mg O2 / L) and hypoxia (&lt;4 mg O2 
 </div>
 </div>
 </div>
-<h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-bruce2014" class="csl-entry">
 Bruce, L.C., Cook, P.L.M., Teakle, I., Hipsey, M.R., 2014. <span class="nocase">Hydrodynamic controls on oxygen dynamics in a riverine salt wedge estuary, the Yarra River estuary, Australia</span>, <em>Hydrology and Earth System Sciences</em> 18, 1397–1411. <a href="https://doi.org/10.5194/hess-18-1397-2014">https://doi.org/10.5194/hess-18-1397-2014</a>
 </div>
@@ -1735,43 +1562,43 @@ Ward, N.K., Steele, B.G., Weathers, K.C., Cottingham, K.L., Ewing, H.A., Hanson,
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": false
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/AquaticEcoDynamics/aed-science/blob/master/10-dissolved_oxygen.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": "https://github.com/AquaticEcoDynamics/aed-science/edit/master/10-dissolved_oxygen.Rmd",
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["aed_science.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"info": true
+  "sharing": {
+    "github": true,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": false
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/AquaticEcoDynamics/aed-science/blob/master/10-dissolved_oxygen.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": "https://github.com/AquaticEcoDynamics/aed-science/edit/master/10-dissolved_oxygen.Rmd",
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["aed_science.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "info": true
 });
 });
 </script>

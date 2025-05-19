@@ -1,11 +1,10 @@
 # Phytoplankton
 
 ## Contributors
+
 ## Overview
 
 The approach to simulate algal biomass is to adopt several plankton functional types ("PFT's") that are typically defined based on specific groups such as diatoms, dinoflagellates and cyanobacteria. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores if desired. Distinction between groups is made by adoption of groups specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation.
-
-
 
 ## Model Description
 
@@ -17,7 +16,7 @@ The main balance equation for a single configured phytoplankton group, $PHY_a$, 
 &-&   \color{brown}{ f_{grz}^{ZOO} - \hat{f}_{grz}^{BIV} } \\ \nonumber
 \end{eqnarray}
 
-where $\mathbb{M}$ and $\mathcal{S}$ refer to water mixing and boundary source terms, respectively. The main processes controlling the rate of phytoplanklton biomass accumulation are gross primary productivity, respiration, mortality, excretion and exudation, settling and vertical migration, and resuspension.  In addition, the coloured $\color{brown}{f}$ terms reflect phytoplankton related fluxes computed by other (optionally) linked modules such as the zooplankton ($\mathrm{ZOO}$) or bivalve ($\mathrm{BIV}$) modules, which compute grazing/filtration fluxes based on their rate of phytoplankton consumption.
+where $\mathbb{M}$ and $\mathcal{S}$ refer to water mixing and boundary source terms, respectively. The main processes controlling the rate of phytoplanklton biomass accumulation are gross primary productivity, respiration, mortality, excretion and exudation, settling and vertical migration, and resuspension. In addition, the coloured $\color{brown}{f}$ terms reflect phytoplankton related fluxes computed by other (optionally) linked modules such as the zooplankton ($\mathrm{ZOO}$) or bivalve ($\mathrm{BIV}$) modules, which compute grazing/filtration fluxes based on their rate of phytoplankton consumption.
 
 The default method for simulating phytoplankton biomass assess a constant intracellular C:N:P ratio. In this case, only a single state variable for carbon biomass is simulated and subject to trasnport, with the N and P content computed based on the C concentration at any point in time or space. The module also supports the simulation of dynamic intracellular stoichiometry should this be required. Within this setting, state variables are also optionally created for phytoplankton biomass N and P content (termed $IN$ and $IP$, respectively):
 
@@ -25,9 +24,7 @@ The default method for simulating phytoplankton biomass assess a constant intrac
 \frac{D}{Dt}IN_{a} =  \color{darkgray}{ \mathbb{M} + \mathcal{S} } \quad
 &+&   \overbrace{ f_{upt}^{IN_{a}} - f_{rsp}^{IN_{a}} - f_{mor}^{IN_{a}} - f_{exc}^{IN_{a}} + f_{set}^{IN_{a}} + \hat{f}_{res}^{IN_{a}} }^\text{aed_phytoplankton} \\ (\#eq:phy2)
 &-&   \color{brown}{ f_{grz}^{ZOO} - \hat{f}_{grz}^{BIV} } \\ \nonumber
-\end{eqnarray}
-and
-\begin{eqnarray}
+\end{eqnarray} and \begin{eqnarray}
 \frac{D}{Dt}IP_{a} =  \color{darkgray}{ \mathbb{M} + \mathcal{S} } \quad
 &+&   \overbrace{ f_{upt}^{IP_{a}} - f_{rsp}^{IP_{a}} - f_{mor}^{IP_{a}} - f_{exc}^{IP_{a}} + f_{set}^{IP_{a}} + \hat{f}_{res}^{IP_{a}} }^\text{aed_phytoplankton} \\ (\#eq:phy3)
 &-&   \color{brown}{ f_{grz}^{ZOO} - \hat{f}_{grz}^{BIV} } \\ \nonumber
@@ -35,42 +32,37 @@ and
 
 A detailed overview of the above functions for C, N and P for each of the various process rates is provided next.
 
-###	Process Descriptions
+### Process Descriptions
 
-#### Photosynthesis & Nutrient Uptake {-}
+#### Photosynthesis & Nutrient Uptake {.unnumbered}
 
-For each phytoplankton group, $a$, the maximum potential growth rate at 20˚C is multiplied by the minimum value of expressions for limitation by light, phosphorus, nitrogen and silica (when configured). While there may be some interaction between limiting factors, a minimum expression is likely to provide a realistic representation of growth limitation (Rhee and Gotham, 1981).
-Therefore, photosynthesis is parameterized as the uptake of carbon, and depends on the temperature, light and nutrient dimensionless functions (adopted from Hipsey & Hamilton, 2008; Li et al., 2013):
+For each phytoplankton group, $a$, the maximum potential growth rate at 20˚C is multiplied by the minimum value of expressions for limitation by light, phosphorus, nitrogen and silica (when configured). While there may be some interaction between limiting factors, a minimum expression is likely to provide a realistic representation of growth limitation (Rhee and Gotham, 1981). Therefore, photosynthesis is parameterized as the uptake of carbon, and depends on the temperature, light and nutrient dimensionless functions (adopted from Hipsey & Hamilton, 2008; Li et al., 2013):
 
 <br>
 
-:::: {.bluebox data-latex=""}
+::: {.bluebox data-latex=""}
 \begin{equation}
  \text{Phytoplankton Growth Equation}
   (\#eq:phyto1)
- \end{equation}
- \begin{align}
+ \end{equation} \begin{align}
   {f_{gpp}^{PHY_{a}}} &= \:  [PHY_{a}] \times
- \end{align}
- \begin{align}
+ \end{align} \begin{align}
   \underbrace{{R_{growth}^{PHY_{a}}}}_{\text{Max growth rate at 20˚C}} \times \underbrace{(1-{k_{pr}^{PHY_{a}}})}_{\text{Photorespiratory loss}} \times \underbrace{{\Phi_{tem}^{PHY_{a}}}(T)}_{\text{Temperature scaling}} \times \underbrace{{\Phi_{str}^{PHY_{a}}}(T)}_{\text{Metabolic stress}} \times
- \end{align}
- \begin{align}
+ \end{align} \begin{align}
   &{\text{min}}\begin{Bmatrix}\underbrace{\Phi_{light}^{PHY_{a}}(I)}_{\text{Light limitation}},\underbrace{\Phi_{N}^{PHY_{a}}(NO_{3},NH_{4},PHY_{N_{a}})}_{\text{N limitation}},\underbrace{\Phi_{P}^{PHY_{a}}(PO_{4},PHY_{P_{a}})}_{\text{P limitation}},\underbrace{\Phi_{Si}^{PHY_{a}}(RSi)}_{\text{Si limitation}}\end{Bmatrix} \times
  \end{align}
-::::
+:::
+
 <br>
 
-**Temperature limitation**: Temperature is a key environmental driver that shapes the responses of different phytoplankton groups. To allow for reduced growth at non-optimal temperatures, a temperature function is used where the maximum productivity occurs at a temperature $T_{OPT}$; above this productivity decreases to zero at the maximum allowable temperature, $T_{MAX}$. Below the standard temperature, $T_{STD}$ the productivity follows a simple Arrenhius scaling formulation. In order to fit a function with these restrictions the following conditions are assumed: at $T=T_{STD}$,$\ {\ \Phi}_{tem}\left(T\right)=1$ and at  $T=T_{OPT},\ \ \frac{d\Phi_{tem}\left(T\right)}{dT}=0$, and at $T=T_{MAX}$,$\ \Phi_{tem}\left(T\right)=0$. This can be numerically solved using Newton’s iterative method and can be specific for each phytoplankton group. The temperature function is calculated according to (Griffin et al. 2001):
-<center>
-<br>
-\begin{equation}
+**Temperature limitation**: Temperature is a key environmental driver that shapes the responses of different phytoplankton groups. To allow for reduced growth at non-optimal temperatures, a temperature function is used where the maximum productivity occurs at a temperature $T_{OPT}$; above this productivity decreases to zero at the maximum allowable temperature, $T_{MAX}$. Below the standard temperature, $T_{STD}$ the productivity follows a simple Arrenhius scaling formulation. In order to fit a function with these restrictions the following conditions are assumed: at $T=T_{STD}$,$\ {\ \Phi}_{tem}\left(T\right)=1$ and at $T=T_{OPT},\ \ \frac{d\Phi_{tem}\left(T\right)}{dT}=0$, and at $T=T_{MAX}$,$\ \Phi_{tem}\left(T\right)=0$. This can be numerically solved using Newton’s iterative method and can be specific for each phytoplankton group. The temperature function is calculated according to (Griffin et al. 2001):
+
+<center><br> \begin{equation}
 \Phi_{tem}^{{PHY}_a}\left(T\right)=\vartheta_a^{T-20}-\vartheta_a^{k\left[T-{c1}_a\right]}+{c0}_a
 (\#eq:phyto2)
-\end{equation}
-<br>
-</center>
-where ${c1}_a$  and ${c0}_a$  are solved numerically given input values of:  $T_a^{std}$, $T_a^{opt}$ and $T_a^{max}$.
+\end{equation} <br></center>
+
+where ${c1}_a$ and ${c0}_a$ are solved numerically given input values of: $T_a^{std}$, $T_a^{opt}$ and $T_a^{max}$.
 
 **Light limitation**: The level of light limitation on phytoplankton growth can be modelled as photoinhibition or non-photoinhibition. In the absence of significant photoinhibition, Webb et al. (1974) suggested a relationship for the fractional limitation of the maximum potential rate of carbon fixation for the case where light saturation behavior was absent (Talling, 1957), and the equations can be analytically integrated with respect to depth (Hipsey and Hamilton, 2008). For the case of photoinhibition, the light saturation value of maximum production ($I_S$) is used and the net level effect can be averaged over the cell by integrating over depth.
 
@@ -85,49 +77,38 @@ knit_hooks$set(customcap= function(before, options, envir) {
     })
 ```
 
-
 ```{r, echo=FALSE,message=FALSE, warning=FALSE, customcap="Light limitation of pytoplankton via various model approaches.", out.width = '100%'}
 htmltools::includeHTML('phytoplankton_plots/app.html')
 ```
 
-**Nutrient limitation**: Limitation of the photosynthetic rate may be dampened according to nitrogen or phosphorus availability, and this is either approximated using a Monod expression of the static model is chosen, or based on the internal nutrient stoichiometry if the dynamic (Droop uptake) model is selected:
-For advanced users, an optional metabolic scaling factor can be included to reduce the photosynthetic capacity of the simulated organisms, for example due to metabolic stress due to undertaking N~2~ fixation:
-<center>
-<br>
-\begin{equation}
+**Nutrient limitation**: Limitation of the photosynthetic rate may be dampened according to nitrogen or phosphorus availability, and this is either approximated using a Monod expression of the static model is chosen, or based on the internal nutrient stoichiometry if the dynamic (Droop uptake) model is selected: For advanced users, an optional metabolic scaling factor can be included to reduce the photosynthetic capacity of the simulated organisms, for example due to metabolic stress due to undertaking N~2~ fixation:
+
+<center><br> \begin{equation}
 \Phi_{str}^{{PHY}_a}=\underbrace{f_{NF}^{{PHY}_a}+\left[{1-f}_{NF}^{{PHY}_a}\right]\Phi_N^{{PHY}_a}\left({NO}_3,{NH}_4,{PHY_N}_a\right)}_{N_{2}\text{ fixation growth scaling}}
 (\#eq:phyto3)
-\end{equation}
-<br>
-</center>
-The above discussion relates to photosynthesis and carbon uptake by the phytoplankton community. In addition users must choose one of two options to model the P, N uptake dynamics for each algal group: i) a constant nutrient to carbon ratio, or ii) simulation of dynamic intracellular stores. For the first model a simple Michaelis-Menten equation is used to model nutrient limitation with a half-saturation constant for the effect of external nutrient concentrations on the growth rate.  
+\end{equation} <br></center>
+
+The above discussion relates to photosynthesis and carbon uptake by the phytoplankton community. In addition users must choose one of two options to model the P, N uptake dynamics for each algal group: i) a constant nutrient to carbon ratio, or ii) simulation of dynamic intracellular stores. For the first model a simple Michaelis-Menten equation is used to model nutrient limitation with a half-saturation constant for the effect of external nutrient concentrations on the growth rate.
 
 The internal phosphorus and nitrogen dynamics within the phytoplankton groups can be modelled using dynamic intracellular stores that are able to regulate growth based on the model of Droop (1974). This model allows for the phytoplankton to have dynamic nutrient uptake rates with variable internal nutrient concentrations bounded by user-defined minimum and maximum values (e.g., see Li et al., 2013).
 
 The uptake of nitrogen must be partitioned into uptake of NO~3~, and NH~4~. The distinction between uptake of NO~3~ and NH~4~ is calculated automatically via a preference factor:
-<center>
-<br>
-\begin{equation}
+
+<center><br> \begin{equation}
 {\ p}_{NH4}^{{PHY}_a}=\frac{{NO}_3\ {NH}_4}{\left({NH}_4+K_N^{{PHY}_a}\right)\left({NO}_3+K_N^{{PHY}_a}\right)}\frac{{NH}_4{\ K}_N^{{PHY}_a}}{\left({NH}_4+{NO}_3\right)\left({NO}_3+K_N^{{PHY}_a}\right)}
 (\#eq:phyto4)
-\end{equation}
-<br>
-\begin{equation}
+\end{equation} <br> \begin{equation}
 p_{NO3}^{{PHY}_a}=1-{\ p}_{NH4}^{{PHY}_a}
 (\#eq:phyto5)
-\end{equation}
-<br>
-</center>
+\end{equation} <br></center>
+
 For diatom groups, silica processes are simulated that include uptake of dissolved silica. The silica limitation function for diatoms is similar to the constant cases for nitrogen and phosphorus which assumes a fixed C:Si ratio.
 
-#### Respiration, Excretion & Mortality {-}
+#### Respiration, Excretion & Mortality {.unnumbered}
 
-Metabolic loss of nutrients from mortality and excretion is proportional to the internal nitrogen to chla ratio multiplied by the loss rate and the fraction of excretion and mortality that returns to the detrital pool. Loss terms for respiration, natural mortality and excretion are modelled with a single ‘respiration’ rate coefficient. This loss rate is then divided into the pure respiratory fraction and losses due to mortality and excretion. The constant $f_{DOM}$ is the fraction of mortality and excretion to the dissolved organic pool with the remainder into the particulate organic pool.
-Nutrient losses through mortality and excretion for the internal nutrient model are similar to the simple model described above, except that dynamically calculated internal nutrient concentrations are used.
+Metabolic loss of nutrients from mortality and excretion is proportional to the internal nitrogen to chla ratio multiplied by the loss rate and the fraction of excretion and mortality that returns to the detrital pool. Loss terms for respiration, natural mortality and excretion are modelled with a single ‘respiration’ rate coefficient. This loss rate is then divided into the pure respiratory fraction and losses due to mortality and excretion. The constant $f_{DOM}$ is the fraction of mortality and excretion to the dissolved organic pool with the remainder into the particulate organic pool. Nutrient losses through mortality and excretion for the internal nutrient model are similar to the simple model described above, except that dynamically calculated internal nutrient concentrations are used.
 
-<center>
-<br>
-\begin{align*}
+<center><br> \begin{align*}
 \hat{R}&=R_{resp}^{{PHY}_a}\ \ \Phi_{sal}^{{PHY}_a}\left(S\right)\ \ \left(\vartheta_{resp}^{{PHY}_a}\right)^{T-20}
 (\#eq:phyto6)\\
 f_{resp}^{{PHY_C}_a}&=k_{fres}^{{PHY}_a}\ \hat{R}\ \left[{PHY_C}_a\right]
@@ -146,9 +127,7 @@ f_{mort}^{{PHY_P}_a}&=\left(1-k_{fdom}^{{PHY}_a}\right)\ \hat{R}\ \ \left[{PHY_P
 (\#eq:phyto13)\\
 f_{excr}^{{PHY_{Si}}_a}&=\hat{R}\ \left[{PHY_{Si}}_a\right]
 (\#eq:phyto14)
-\end{align*}
-<br>
-</center>
+\end{align*} <br></center>
 
 The salinity effect on mortality is given by various quadratic formulations, depending on the groups sensitivity to salinity (Griffin et al 2001; Robson and Hamilton, 2004). An example of the use of various salinity limitation options is shown in Figure 3.
 
@@ -160,23 +139,22 @@ knitr::include_app('https://gilesnknight.shinyapps.io/aed_manual_salinity_growth
 knitr::include_app('https://gilesnknight.shinyapps.io/aed_manual_salinity_respiration_amplification/', height = '511px')
 ```
 
-
-###	Optional Module Links
+### Optional Module Links
 
 Other modules can influence phytoplankton sources/sinks, as indicated in Eq \@ref(eq:phy1) for $PHY$. These include:
 
--	aed_oxygen: $O_2$ is influenced by the rate of photosynthesis and respiration.
--	aed_carbon: $DIC$ is influenced by the rate of photosynthesis and respiration.
--	aed_phosphorus: $PO_4$ is consumed during photosynthesis.
--	aed_nitrogen: $NO_3$ and $NH_4$ are consumed during photosynthesis.
--	aed_silica: $SiO2$ is consumed during photosynthesis.
--	aed_organic_matter: $DOM$ and $POM$ is contributed to by the rate of phytoplankton excretion and mortality.
--	aed_zooplankton: zooplankton can optionally graze upon any phytoplankton groups.
--	aed_bivalve: bivalves can optionally graze upon any phytoplankton groups.
--	aed_noncohesive: optional link to simulate the phytoplankton resuspension.
--	aed_seddiagenesis: benthic phytoplankton (MPB) can grow and influence oxygen, carbon and nutrient fluxes at the sediment-water interface.
+-   aed_oxygen: $O_2$ is influenced by the rate of photosynthesis and respiration.
+-   aed_carbon: $DIC$ is influenced by the rate of photosynthesis and respiration.
+-   aed_phosphorus: $PO_4$ is consumed during photosynthesis.
+-   aed_nitrogen: $NO_3$ and $NH_4$ are consumed during photosynthesis.
+-   aed_silica: $SiO2$ is consumed during photosynthesis.
+-   aed_organic_matter: $DOM$ and $POM$ is contributed to by the rate of phytoplankton excretion and mortality.
+-   aed_zooplankton: zooplankton can optionally graze upon any phytoplankton groups.
+-   aed_bivalve: bivalves can optionally graze upon any phytoplankton groups.
+-   aed_noncohesive: optional link to simulate the phytoplankton resuspension.
+-   aed_seddiagenesis: benthic phytoplankton (MPB) can grow and influence oxygen, carbon and nutrient fluxes at the sediment-water interface.
 
-###	Feedbacks to the Host Model
+### Feedbacks to the Host Model
 
 The phytoplankton module can feedback conditions to the hydrodynamic model by modifying the light extinction coefficient. For each group simulated a specific attenuation coefficient, $K_e$, is applied, and is specific for each group simulated.
 
@@ -184,16 +162,13 @@ This total light extinction computed by the PHY model is:
 
 \begin{equation}
 K_{d}^{phy} = \sum_{a}K_{e_{PHY_a}} PHY_a 
-\end{equation}
-<!-- \\ (\#eq:phy_light_extc) -->
-<br>
+\end{equation} <!-- \\ (\#eq:phy_light_extc) --> <br>
 
-###	Variable Summary
+### Variable Summary
 
 The default variables created by this module, and the optionally required linked variables needed for full functionality of this module are summarised in Table \@ref(tab:16-statetable). The diagnostic outputs able to be output are summarised in Table \@ref(tab:16-diagtable).
 
-
-#### State Variables {-}
+#### State Variables {.unnumbered}
 
 ```{r 16-statetable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -250,9 +225,7 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Phytoplankton - *state* variables", 
 
 <br>
 
-
-#### Diagnostics {-}
-
+#### Diagnostics {.unnumbered}
 
 ```{r 16-diagtable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -312,34 +285,43 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Phytoplankton - *diagnostic* variabl
 
 <br>
 
-
-
-
 <!-- ```{r 16-diagnostics, echo=FALSE, message=FALSE, warning=FALSE} -->
+
 <!-- library(knitr) -->
+
 <!-- library(kableExtra) -->
+
 <!-- diagnostics <- read.csv("tables/16-phytoplankton/diagnostics.csv", check.names=FALSE) -->
+
 <!-- kable(diagnostics,"html", escape = F, align = "c", caption = "Diagnostics") %>% -->
+
 <!--   kable_styling(diagnostics, bootstrap_options = "basic", -->
+
 <!--                 full_width = F, position = "center", font_size = 12) %>% -->
+
 <!--   column_spec(1, width_min = "6em") %>% -->
+
 <!--   column_spec(2, width_min = "6em") %>% -->
+
 <!--   column_spec(3, width_min = "6em") %>% -->
+
 <!--   column_spec(4, width_min = "6em") %>% -->
+
 <!--   column_spec(5, width_min = "6em") %>% -->
+
 <!--   row_spec(1:17, background = 'white') %>% -->
+
 <!--   scroll_box(width = "770px", height = "500px", -->
+
 <!--              fixed_thead = FALSE) -->
+
 <!-- ``` -->
 
-
-
-###	Parameter and Option Summary
+### Parameter and Option Summary
 
 The module requires users to set both module level confiuration options and parameters, and group-specific parameters.
 
 The group-specific parameters and settings are read in through the `aed_phyto_pars`, summarised in Table \@ref(tab:16-parstable).
-
 
 ```{r 16-parstable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -420,10 +402,10 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Phytoplankton group-specific paramet
   scroll_box(width = "770px", height = "2500px",
              fixed_thead = FALSE)
 ```
+
 <br>
 
 The module level parameters and settings are read in as normal through the `aed.nml`, summarised in Table \@ref(tab:16-configtable).
-
 
 ```{r 16-configtable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -484,82 +466,142 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Phytoplankton group-specific paramet
   scroll_box(width = "770px", height = "1500px",
              fixed_thead = FALSE)
 ```
+
 <br>
 
-
 <!-- ```{r 16-parametersummmary, echo=FALSE, message=FALSE, warning=FALSE} -->
+
 <!-- library(knitr) -->
+
 <!-- library(kableExtra) -->
+
 <!-- library(dplyr) -->
+
 <!-- library(tidyverse) -->
+
 <!-- parameter_summary <- read.csv("tables/16-phytoplankton/parameter_summary.csv", check.names=FALSE) -->
+
 <!-- kable(parameter_summary,"html", escape = F, align = "c", caption = "Diagnostics", -->
+
 <!--       bootstrap_options = "hover") %>% -->
+
 <!--   kable_styling(parameter_summary, bootstrap_options = "hover", -->
+
 <!--                 full_width = F, position = "center", font_size = 12) %>% -->
+
 <!--   column_spec(1, width_min = "6em") %>% -->
+
 <!--   column_spec(2, width_min = "6em") %>% -->
+
 <!--   column_spec(3, width_min = "6em") %>% -->
+
 <!--   column_spec(4, width_min = "6em") %>% -->
+
 <!--   column_spec(5, width_min = "6em") %>% -->
+
 <!--   column_spec(6, width_min = "6em") %>% -->
+
 <!--   column_spec(7, width_min = "6em") %>% -->
+
 <!--   column_spec(8, width_min = "6em") %>% -->
+
 <!--   column_spec(9, width_min = "6em") %>% -->
+
 <!--   column_spec(10, width_min = "6em") %>% -->
+
 <!--   column_spec(11, width_min = "6em") %>% -->
+
 <!--   column_spec(12, width_min = "6em") %>% -->
+
 <!--   column_spec(13, width_min = "6em") %>% -->
+
 <!--   column_spec(14, width_min = "6em") %>% -->
+
 <!--   column_spec(15, width_min = "6em") %>% -->
+
 <!--   column_spec(16, width_min = "6em") %>% -->
+
 <!--   column_spec(17, width_min = "6em") %>% -->
+
 <!--   column_spec(18, width_min = "6em") %>% -->
+
 <!--   column_spec(19, width_min = "6em") %>% -->
+
 <!--   column_spec(20, width_min = "6em") %>% -->
+
 <!--   column_spec(21, width_min = "6em") %>% -->
+
 <!--   column_spec(22, width_min = "6em") %>% -->
+
 <!--   column_spec(23, width_min = "6em") %>% -->
+
 <!--   column_spec(24, width_min = "6em") %>% -->
+
 <!--   row_spec(1:55, background = 'white') %>% -->
+
 <!--   row_spec(1:1, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(6:6, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(13:13, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(18:18, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(24:24, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(29:29, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(42:42, background = '#E8EAEF') %>% -->
+
 <!--   row_spec(51:51, background = '#E8EAEF') %>% -->
+
 <!--   scroll_box(width = "770px", height = "500px", -->
+
 <!--              fixed_thead = FALSE) -->
+
 <!-- ``` -->
-
-
 
 ## Setup & Configuration
 
 ### Setup Example
 
 <!-- ```{r 16-parameterconfig, echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(kableExtra) -->
-<!-- parameter_config <- read.csv("tables/16-phytoplankton/parameter_config.csv", check.names=FALSE) -->
-<!-- kable(parameter_config,"html", escape = F, align = "c", caption = "Parameters and configuration", -->
-<!--       bootstrap_options = "hover") %>% -->
-<!--   kable_styling(parameter_config, bootstrap_options = "hover", -->
-<!--                 full_width = F, position = "center", font_size = 12) %>% -->
-<!--   column_spec(1, width_min = "10em") %>% -->
-<!--   column_spec(2, width_min = "10em") %>% -->
-<!--   column_spec(3, width_min = "6em") %>% -->
-<!--   column_spec(4, width_min = "6em") %>% -->
-<!--   column_spec(5, width_min = "6em") %>% -->
-<!--   column_spec(6, width_min = "6em") %>% -->
-<!--   column_spec(7, width_min = "6em") %>% -->
-<!--   row_spec(1:19, background = 'white') %>% -->
-<!--   scroll_box(width = "770px", height = "500px", -->
-<!--              fixed_thead = FALSE) -->
-<!-- ``` -->
 
+<!-- library(knitr) -->
+
+<!-- library(kableExtra) -->
+
+<!-- parameter_config <- read.csv("tables/16-phytoplankton/parameter_config.csv", check.names=FALSE) -->
+
+<!-- kable(parameter_config,"html", escape = F, align = "c", caption = "Parameters and configuration", -->
+
+<!--       bootstrap_options = "hover") %>% -->
+
+<!--   kable_styling(parameter_config, bootstrap_options = "hover", -->
+
+<!--                 full_width = F, position = "center", font_size = 12) %>% -->
+
+<!--   column_spec(1, width_min = "10em") %>% -->
+
+<!--   column_spec(2, width_min = "10em") %>% -->
+
+<!--   column_spec(3, width_min = "6em") %>% -->
+
+<!--   column_spec(4, width_min = "6em") %>% -->
+
+<!--   column_spec(5, width_min = "6em") %>% -->
+
+<!--   column_spec(6, width_min = "6em") %>% -->
+
+<!--   column_spec(7, width_min = "6em") %>% -->
+
+<!--   row_spec(1:19, background = 'white') %>% -->
+
+<!--   scroll_box(width = "770px", height = "500px", -->
+
+<!--              fixed_thead = FALSE) -->
+
+<!-- ``` -->
 
 An example `aed.nml` configuration block for the `aed_phytoplankton` module that includes a single simulated group plus microphytobenthos (MPB) and resuspension effects, and doesn't consider Si limitation, is shown below:
 
@@ -641,10 +683,9 @@ Another example `aed.nml` block for the phytoplankton module that includes no be
 
 <br>
 
-The numbers reported here are for example purposes and should be reviewed before use based on the users chosen site context. 
+The numbers reported here are for example purposes and should be reviewed before use based on the users chosen site context.
 
 <br>
-
 
 ```{block2, note-text, type='rmdnote'}
 In addition to adding the above code block to `aed.nml`, users must also supply a valid AED phytoplankton parameter database file (`aed_phyto_pars`). 
@@ -657,27 +698,38 @@ Users can create a standard file in the correct format from the online [**AED pa
 
 ## Case Studies & Examples
 
-###	Case Study : Falling Creek Reservoir
+### Case Study : Falling Creek Reservoir
 
 Falling Creek Reservoir (FCR) is a water supply reservoir in Virginia.
 
 <!-- <center> -->
+
 <!-- ```{r echo=FALSE, message=FALSE, warning=FALSE, width = 501, height = 385} -->
+
 <!-- library(leaflet) -->
+
 <!-- leaflet(height=385, width=500) %>% -->
+
 <!--   setView(lng = 115.835235, lat = -31.991618, zoom = 11) %>% -->
+
 <!--   addTiles() %>% -->
+
 <!--   addProviderTiles(providers$Stamen.Terrain)  %>% -->
+
 <!--   addMarkers(lng = 115.835235, lat = -31.991618, popup = "Swan River") -->
+
 <!-- ``` -->
+
 <!-- </center> -->
 
 <center>
-![Figure X: Example outputs from the FCR GLM-AED model, showing a) the total chl-a concentration depth profiles, and b) the change in  biomass of the indivdual simulated groups.](images/phytoplankton/fcr_phyto_example1.png){width=90%}
+
+![Figure X: Example outputs from the FCR GLM-AED model, showing a) the total chl-a concentration depth profiles, and b) the change in biomass of the indivdual simulated groups.](images/phytoplankton/fcr_phyto_example1.png){width="90%"}
+
 </center>
 
 <br>
 
-An example GLM-AED simulation for FCR is available in the GLM example simulations provided on GitHub. 
+An example GLM-AED simulation for FCR is available in the GLM example simulations provided on GitHub.
 
-<!-- ###	Publications -->
+<!-- ###    Publications -->

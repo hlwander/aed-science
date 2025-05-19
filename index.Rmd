@@ -77,6 +77,10 @@ Maintainers and contributors must follow this repository's [CODE OF CONDUCT](htt
 To build the book locally, clone or download the aed-science repo, load R in root directory (e.g. by opening aed-sceince.Rproj in RStudio) and run the following lines:
 
 ```{r eval=FALSE}
+library(xaringanExtra)
+library(bookdown)
+library(hablar)
+library(seacarb)
 
 bookdown::render_book("index.Rmd") # to build the book
 browseURL("_book/index.html") # to view it
